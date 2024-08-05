@@ -16,10 +16,13 @@ all: clean
 
 run:
 	@printf "$(BLUE)Starting Server\n$(RESET)"
-	@${GO} run $(APP)
+	@${GO} run  $(APP)
 
 local:
 	air -c .air.toml
+
+migrate:
+	@${GO} run cmd/migration/init.go
 
 clean:
 	@printf "$(BLUE)Clean useless packages    $(REST) "
