@@ -1,12 +1,9 @@
 package models
 
-import (
-	"gorm.io/gorm"
-)
+import "time"
 
 type Dive struct {
-	gorm.Model
-
+	ID          uint    `gorm:"primaryKey" json:"id"`
 	Name        string  `json:"name"`
 	Depth       float32 `json:"depth"`
 	Country     string  `json:"country"`
@@ -16,6 +13,8 @@ type Dive struct {
 	Fishes      []Fish  `gorm:"many2many:dive_fish"`
 	Duration    float32 `json:"duration"`
 	UserID      *uint   `json:"userId"`
+	CreatedAt   time.Time
+	UpdatedAt   time.Time
 }
 
 func (Dive) TableName() string {

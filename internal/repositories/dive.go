@@ -8,9 +8,13 @@ import (
 	"gorm.io/gorm"
 )
 
+//go:generate mockgen -source=dive.go -destination=../../test/repositories/mock/dive.go
+
 type DiveInterface interface {
 	Create(*types.CreateDivePayload) (*models.Dive, error)
 	ReadAll() ([]models.Dive, error)
+	ReadOne(id uint) (*models.Dive, error)
+	Delete(id uint) error
 }
 
 type DiveRepository struct {
@@ -53,4 +57,24 @@ func (d DiveRepository) ReadAll() ([]models.Dive, error) {
 	}
 
 	return dives, nil
+}
+
+func (d DiveRepository) ReadOne(id uint) (*models.Dive, error) {
+	var dive *models.Dive
+
+	err := d.db.Where("id = ?", id).Find(&dive)
+	if err.Error != nil {
+		return nil, err.Error
+	}
+
+	return dive, nil
+}
+
+func (d DiveRepository) Delete(id uint) error {
+	err := d.db.Delete(&models.Dive{}, "id = ?", id)
+	if err.Error != nil {
+		return err.Error
+	}
+
+	return nil
 }

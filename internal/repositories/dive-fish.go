@@ -7,6 +7,8 @@ import (
 	"gorm.io/gorm"
 )
 
+//go:generate mockgen -source=dive-fish.go -destination=../../test/repositories/mock/dive-fish.go
+
 type DiveFishInterface interface {
 	Create(types.CreateFishMappingPayload) (*models.DiveFish, error)
 }

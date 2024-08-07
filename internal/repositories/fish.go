@@ -6,6 +6,8 @@ import (
 	"gorm.io/gorm"
 )
 
+//go:generate mockgen -source=fish.go -destination=../../test/repositories/mock/fish.go
+
 type FishInterface interface {
 	Create(string) (*models.Fish, error)
 }

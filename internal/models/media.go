@@ -1,14 +1,13 @@
 package models
 
-import (
-	"gorm.io/gorm"
-)
+import "time"
 
 type Media struct {
-	gorm.Model
-
-	DiveID uint
-	Dive   *Dive `gorm:"foreignKey:DiveID"`
+	ID        uint `gorm:"primaryKey" json:"id"`
+	DiveID    uint
+	Dive      *Dive `gorm:"foreignKey:DiveID"`
+	CreatedAt time.Time
+	UpdatedAt time.Time
 }
 
 func (Media) TableName() string {

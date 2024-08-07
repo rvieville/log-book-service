@@ -29,6 +29,9 @@ clean:
 	@${GO} mod tidy
 	@printf "$(GREEN)Done.$(RESET)\n"
 
+mock:
+	@${GO} generate -v ./...
+
 test:
-	@${GO} test -v -coverprofile=./coverage/coverage.out ./internal/services/...
+	@${GO} test -v -coverprofile=./coverage/coverage.out ./test/...
 	@${GO} tool cover -html=./coverage/coverage.out -o ./coverage/covergae.html

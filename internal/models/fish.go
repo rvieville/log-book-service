@@ -1,11 +1,12 @@
 package models
 
-import "gorm.io/gorm"
+import "time"
 
 type Fish struct {
-	gorm.Model
-
-	Name string
+	ID        uint `gorm:"primaryKey" json:"id"`
+	Name      string
+	CreatedAt time.Time
+	UpdatedAt time.Time
 }
 
 func (Fish) TableName() string {
