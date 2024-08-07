@@ -36,7 +36,7 @@ func (m *MockDiveFishInterface) EXPECT() *MockDiveFishInterfaceMockRecorder {
 }
 
 // Create mocks base method.
-func (m *MockDiveFishInterface) Create(arg0 types.CreateFishMappingPayload) (*models.DiveFish, error) {
+func (m *MockDiveFishInterface) Create(arg0 types.CreateFishPayload) (*models.DiveFish, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Create", arg0)
 	ret0, _ := ret[0].(*models.DiveFish)

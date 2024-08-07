@@ -111,7 +111,7 @@ func (m *MockDiveFishInterface) EXPECT() *MockDiveFishInterfaceMockRecorder <spa
 }</span>
 
 // Create mocks base method.
-func (m *MockDiveFishInterface) Create(arg0 types.CreateFishMappingPayload) (*models.DiveFish, error) <span class="cov0" title="0">{
+func (m *MockDiveFishInterface) Create(arg0 types.CreateFishPayload) (*models.DiveFish, error) <span class="cov0" title="0">{
         m.ctrl.T.Helper()
         ret := m.ctrl.Call(m, "Create", arg0)
         ret0, _ := ret[0].(*models.DiveFish)

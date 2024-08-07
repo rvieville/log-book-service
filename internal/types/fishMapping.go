@@ -5,12 +5,12 @@ import (
 	"fmt"
 )
 
-type CreateFishMappingPayload struct {
+type CreateFishPayload struct {
 	DiveID uint
 	FishID uint
 }
 
-func (fm CreateFishMappingPayload) Validate() error {
+func (fm CreateFishPayload) Validate() error {
 	if fm.DiveID == 0 {
 		fmt.Println(fm.DiveID)
 		return errors.New("diveId is required")

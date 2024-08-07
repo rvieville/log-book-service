@@ -30,7 +30,7 @@ func (fm DiveService) Create(payload *types.CreateDivePayload) (*models.Dive, er
 	}
 
 	for _, fish := range payload.Fishes {
-		fm.diveFishService.Create(types.CreateFishMappingPayload{
+		fm.diveFishService.Create(&types.CreateFishPayload{
 			DiveID: dive.ID,
 			FishID: fish,
 		})

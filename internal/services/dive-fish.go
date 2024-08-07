@@ -16,6 +16,6 @@ func NewDiveFishService(repository repositories.DiveFishInterface) *DiveFishServ
 	}
 }
 
-func (fm DiveFishService) Create(payload types.CreateFishMappingPayload) (*models.DiveFish, error) {
+func (fm DiveFishService) Create(payload *types.CreateFishPayload) (*models.DiveFish, error) {
 	return fm.repository.Create(payload)
 }
