@@ -21,7 +21,7 @@ func main() {
 	db.Connection()
 	fmt.Println("connect success")
 
-	err = db.DB.AutoMigrate(&models.Dive{}, &models.FishMapping{}, &models.Fish{}, &models.Media{})
+	err = db.DB.AutoMigrate(&models.Dive{}, &models.DiveFish{}, &models.Fish{}, &models.Media{})
 	if err != nil {
 		panic(err.Error())
 	}

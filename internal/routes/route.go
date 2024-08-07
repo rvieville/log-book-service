@@ -17,6 +17,5 @@ func InitPublicRoute(router *mux.Router) {
 }
 
 func InitPrivateRoute(router *mux.Router) {
-	FishMappingRouteInit(router)
 	DiveRouteInit(router)
 }

@@ -7,7 +7,8 @@ import (
 type Media struct {
 	gorm.Model
 
-	DiveID int32
+	DiveID uint
+	Dive   *Dive `gorm:"foreignKey:DiveID"`
 }
 
 func (Media) TableName() string {

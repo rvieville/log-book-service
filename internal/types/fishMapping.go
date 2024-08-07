@@ -6,8 +6,8 @@ import (
 )
 
 type CreateFishMappingPayload struct {
-	DiveID int32
-	FishID int32
+	DiveID uint
+	FishID uint
 }
 
 func (fm CreateFishMappingPayload) Validate() error {

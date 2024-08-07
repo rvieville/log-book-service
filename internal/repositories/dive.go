@@ -9,7 +9,8 @@ import (
 )
 
 type DiveInterface interface {
-	Create(types.CreateDivePayload) (*models.Dive, error)
+	Create(*types.CreateDivePayload) (*models.Dive, error)
+	ReadAll() ([]models.Dive, error)
 }
 
 type DiveRepository struct {
@@ -22,7 +23,7 @@ func NewDiveRepository(db *gorm.DB) DiveInterface {
 	}
 }
 
-func (d DiveRepository) Create(payload types.CreateDivePayload) (*models.Dive, error) {
+func (d DiveRepository) Create(payload *types.CreateDivePayload) (*models.Dive, error) {
 	dive := &models.Dive{
 		Name:        payload.Name,
 		Depth:       payload.Depth,
@@ -30,10 +31,8 @@ func (d DiveRepository) Create(payload types.CreateDivePayload) (*models.Dive, e
 		Island:      payload.Island,
 		Weight:      payload.Weight,
 		Description: payload.Description,
-		FishList:    payload.FishList,
 		Duration:    payload.Duration,
 		UserID:      payload.UserID,
-		Media:       payload.Media,
 	}
 
 	err := d.db.Create(&dive)
@@ -43,4 +42,15 @@ func (d DiveRepository) Create(payload types.CreateDivePayload) (*models.Dive, e
 	}
 
 	return dive, nil
+}
+
+func (d DiveRepository) ReadAll() ([]models.Dive, error) {
+	var dives []models.Dive
+
+	err := d.db.Preload("Fishes").Find(&dives)
+	if err.Error != nil {
+		return nil, err.Error
+	}
+
+	return dives, nil
 }

@@ -7,16 +7,15 @@ import (
 type Dive struct {
 	gorm.Model
 
-	Name        string
-	Depth       float32
-	Country     string
-	Island      string
-	Weight      float32
-	Description string
-	FishList    *[]FishMapping
-	Duration    float32
-	UserID      *int32
-	Media       *[]Media
+	Name        string  `json:"name"`
+	Depth       float32 `json:"depth"`
+	Country     string  `json:"country"`
+	Island      string  `json:"island"`
+	Weight      float32 `json:"weight"`
+	Description string  `json:"description"`
+	Fishes      []Fish  `gorm:"many2many:dive_fish"`
+	Duration    float32 `json:"duration"`
+	UserID      *uint   `json:"userId"`
 }
 
 func (Dive) TableName() string {

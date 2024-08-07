@@ -5,8 +5,19 @@ import (
 	"errors"
 	"net/http"
 
+	"github.com/go-playground/validator/v10"
 	"gorm.io/gorm"
 )
+
+var validate *validator.Validate
+
+func InitValidator() {
+	validate = validator.New()
+}
+
+func Validate(s interface{}) error {
+	return validate.Struct(s)
+}
 
 type CustomError struct {
 	Code    int
