@@ -18,4 +18,5 @@ func InitPublicRoute(router *mux.Router) {
 
 func InitPrivateRoute(router *mux.Router) {
 	DiveRouteInit(router)
+	StorageRouteInit(router)
 }

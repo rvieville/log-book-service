@@ -11,6 +11,7 @@ type Dive struct {
 	Weight      float32 `json:"weight"`
 	Description string  `json:"description"`
 	Fishes      []Fish  `gorm:"many2many:dive_fish"`
+	Medias      []Media `gorm:"many2many:dive_media"`
 	Duration    float32 `json:"duration"`
 	UserID      *uint   `json:"userId"`
 	CreatedAt   time.Time

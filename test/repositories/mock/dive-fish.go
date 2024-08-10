@@ -36,7 +36,7 @@ func (m *MockDiveFishInterface) EXPECT() *MockDiveFishInterfaceMockRecorder {
 }
 
 // Create mocks base method.
-func (m *MockDiveFishInterface) Create(arg0 types.CreateFishPayload) (*models.DiveFish, error) {
+func (m *MockDiveFishInterface) Create(arg0 *types.CreateFishPayload) (*models.DiveFish, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Create", arg0)
 	ret0, _ := ret[0].(*models.DiveFish)
@@ -48,4 +48,48 @@ func (m *MockDiveFishInterface) Create(arg0 types.CreateFishPayload) (*models.Di
 func (mr *MockDiveFishInterfaceMockRecorder) Create(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockDiveFishInterface)(nil).Create), arg0)
+}
+
+// Delete mocks base method.
+func (m *MockDiveFishInterface) Delete(id uint) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Delete", id)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// Delete indicates an expected call of Delete.
+func (mr *MockDiveFishInterfaceMockRecorder) Delete(id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockDiveFishInterface)(nil).Delete), id)
+}
+
+// ReadAll mocks base method.
+func (m *MockDiveFishInterface) ReadAll() ([]models.DiveFish, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ReadAll")
+	ret0, _ := ret[0].([]models.DiveFish)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ReadAll indicates an expected call of ReadAll.
+func (mr *MockDiveFishInterfaceMockRecorder) ReadAll() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadAll", reflect.TypeOf((*MockDiveFishInterface)(nil).ReadAll))
+}
+
+// ReadOne mocks base method.
+func (m *MockDiveFishInterface) ReadOne(id uint) (*models.DiveFish, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ReadOne", id)
+	ret0, _ := ret[0].(*models.DiveFish)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ReadOne indicates an expected call of ReadOne.
+func (mr *MockDiveFishInterfaceMockRecorder) ReadOne(id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadOne", reflect.TypeOf((*MockDiveFishInterface)(nil).ReadOne), id)
 }

@@ -50,6 +50,20 @@ func (mr *MockDiveInterfaceMockRecorder) Create(arg0 interface{}) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockDiveInterface)(nil).Create), arg0)
 }
 
+// Delete mocks base method.
+func (m *MockDiveInterface) Delete(id uint) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Delete", id)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// Delete indicates an expected call of Delete.
+func (mr *MockDiveInterfaceMockRecorder) Delete(id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockDiveInterface)(nil).Delete), id)
+}
+
 // ReadAll mocks base method.
 func (m *MockDiveInterface) ReadAll() ([]models.Dive, error) {
 	m.ctrl.T.Helper()
@@ -63,4 +77,19 @@ func (m *MockDiveInterface) ReadAll() ([]models.Dive, error) {
 func (mr *MockDiveInterfaceMockRecorder) ReadAll() *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadAll", reflect.TypeOf((*MockDiveInterface)(nil).ReadAll))
+}
+
+// ReadOne mocks base method.
+func (m *MockDiveInterface) ReadOne(id uint) (*models.Dive, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ReadOne", id)
+	ret0, _ := ret[0].(*models.Dive)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ReadOne indicates an expected call of ReadOne.
+func (mr *MockDiveInterfaceMockRecorder) ReadOne(id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadOne", reflect.TypeOf((*MockDiveInterface)(nil).ReadOne), id)
 }

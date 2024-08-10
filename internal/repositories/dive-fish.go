@@ -2,6 +2,7 @@ package repositories
 
 import (
 	"diving-log-book-service/internal/models"
+	"diving-log-book-service/internal/pkg/apihelper"
 	"diving-log-book-service/internal/types"
 
 	"gorm.io/gorm"
@@ -34,7 +35,7 @@ func (fm DiveFishRepository) Create(payload *types.CreateFishPayload) (*models.D
 
 	err := fm.db.Create(&fishMapping)
 	if err.Error != nil {
-		return nil, err.Error
+		return nil, apihelper.GromError(err.Error)
 	}
 
 	return fishMapping, nil
@@ -45,7 +46,7 @@ func (df DiveFishRepository) ReadAll() ([]models.DiveFish, error) {
 
 	err := df.db.Find(&dives)
 	if err.Error != nil {
-		return nil, err.Error
+		return nil, apihelper.GromError(err.Error)
 	}
 
 	return dives, nil
@@ -56,7 +57,7 @@ func (df DiveFishRepository) ReadOne(id uint) (*models.DiveFish, error) {
 
 	err := df.db.Where("id = ?", id).Find(&dive)
 	if err.Error != nil {
-		return nil, err.Error
+		return nil, apihelper.GromError(err.Error)
 	}
 
 	return dive, nil
@@ -65,7 +66,7 @@ func (df DiveFishRepository) ReadOne(id uint) (*models.DiveFish, error) {
 func (df DiveFishRepository) Delete(id uint) error {
 	err := df.db.Delete(&models.DiveFish{}, "id = ?", id)
 	if err.Error != nil {
-		return err.Error
+		return apihelper.GromError(err.Error)
 	}
 
 	return nil

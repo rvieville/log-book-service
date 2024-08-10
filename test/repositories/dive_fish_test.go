@@ -1,18 +1,22 @@
 package repositories_test
 
 import (
-	"diving-log-book-service/internal/db"
 	"diving-log-book-service/internal/repositories"
 	"diving-log-book-service/internal/types"
+	"diving-log-book-service/test/utils"
 	"testing"
 )
+
+func getDiveFishRepo() repositories.DiveFishInterface {
+	return repositories.NewDiveFishRepository(utils.ConnectDB())
+}
 
 func TestCreateDiveFish(t *testing.T) {
 	diveToDelete = []uint{}
 	diveFishToDelete = []uint{}
 
-	repo := repositories.NewDiveFishRepository(db.DB)
-	diveRepo := repositories.NewDiveRepository(db.DB)
+	repo := getDiveFishRepo()
+	diveRepo := getDiveRepo()
 
 	dive := &types.CreateDivePayload{
 		Name:        "bonjour",
@@ -44,7 +48,7 @@ func TestCreateDiveFish(t *testing.T) {
 }
 
 func TestReadAllDiveFish(t *testing.T) {
-	repo := repositories.NewDiveFishRepository(db.DB)
+	repo := getDiveFishRepo()
 
 	_, err := repo.ReadAll()
 	if err != nil {
@@ -53,7 +57,7 @@ func TestReadAllDiveFish(t *testing.T) {
 }
 
 func TestReadOneDiveFish(t *testing.T) {
-	repo := repositories.NewDiveFishRepository(db.DB)
+	repo := getDiveFishRepo()
 
 	dive, err := repo.ReadOne(diveFishToDelete[0])
 	if err != nil {
@@ -66,8 +70,8 @@ func TestReadOneDiveFish(t *testing.T) {
 }
 
 func TestDeleteDiveFish(t *testing.T) {
-	repo := repositories.NewDiveFishRepository(db.DB)
-	diveRepo := repositories.NewDiveRepository(db.DB)
+	repo := getDiveFishRepo()
+	diveRepo := getDiveRepo()
 
 	err := repo.Delete(diveFishToDelete[0])
 	if err != nil {

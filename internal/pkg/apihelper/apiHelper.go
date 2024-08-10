@@ -5,6 +5,7 @@ import (
 	"errors"
 	"net/http"
 
+	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/go-playground/validator/v10"
 	"gorm.io/gorm"
 )
@@ -62,6 +63,20 @@ func GromError(err error) error {
 	}
 
 	return InternalError(err.Error())
+}
+
+func S3Error(err error) error {
+	s3Err, ok := err.(awserr.Error)
+	if !ok {
+		return err
+	}
+
+	switch s3Err.Code() {
+	case "NotFound":
+		return NotFound(s3Err.Message())
+	default:
+		return InternalError(s3Err.Message())
+	}
 }
 
 func ValidationError(w http.ResponseWriter, err error) {

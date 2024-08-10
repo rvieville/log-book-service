@@ -1,33 +1,23 @@
 package repositories_test
 
 import (
-	"diving-log-book-service/internal/db"
 	"diving-log-book-service/internal/repositories"
 	"diving-log-book-service/internal/types"
-	"log"
+	"diving-log-book-service/test/utils"
 	"testing"
-
-	"github.com/joho/godotenv"
 )
 
 var diveToDelete []uint
 var diveFishToDelete []uint
 
-func TestMain(m *testing.M) {
-	err := godotenv.Load("../../.env")
-	if err != nil {
-		log.Fatal("Error loading .env file", err)
-	}
-
-	db.Connection()
-
-	m.Run()
+func getDiveRepo() repositories.DiveInterface {
+	return repositories.NewDiveRepository(utils.ConnectDB())
 }
 
 func TestCreateDive(t *testing.T) {
 	diveToDelete = []uint{}
 	diveFishToDelete = []uint{}
-	repo := repositories.NewDiveRepository(db.DB)
+	repo := getDiveRepo()
 
 	dive := &types.CreateDivePayload{
 		Name:        "bonjour",
@@ -48,7 +38,7 @@ func TestCreateDive(t *testing.T) {
 }
 
 func TestReadAllDive(t *testing.T) {
-	repo := repositories.NewDiveRepository(db.DB)
+	repo := getDiveRepo()
 
 	_, err := repo.ReadAll()
 	if err != nil {
@@ -57,7 +47,7 @@ func TestReadAllDive(t *testing.T) {
 }
 
 func TestReadOneDive(t *testing.T) {
-	repo := repositories.NewDiveRepository(db.DB)
+	repo := getDiveRepo()
 
 	dive, err := repo.ReadOne(diveToDelete[0])
 	if err != nil {
@@ -70,7 +60,7 @@ func TestReadOneDive(t *testing.T) {
 }
 
 func TestDeleteDive(t *testing.T) {
-	repo := repositories.NewDiveRepository(db.DB)
+	repo := getDiveRepo()
 
 	err := repo.Delete(diveToDelete[0])
 	if err != nil {

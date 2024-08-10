@@ -61,6 +61,12 @@
 				
 				<option value="file2">diving-log-book-service/test/repositories/mock/fish.go (0.0%)</option>
 				
+				<option value="file3">diving-log-book-service/test/repositories/mock/storage.go (0.0%)</option>
+				
+				<option value="file4">diving-log-book-service/test/repositories/mock/user.go (0.0%)</option>
+				
+				<option value="file5">diving-log-book-service/test/utils/postgres.go (75.0%)</option>
+				
 				</select>
 			</div>
 			<div id="legend">
@@ -111,7 +117,7 @@ func (m *MockDiveFishInterface) EXPECT() *MockDiveFishInterfaceMockRecorder <spa
 }</span>
 
 // Create mocks base method.
-func (m *MockDiveFishInterface) Create(arg0 types.CreateFishPayload) (*models.DiveFish, error) <span class="cov0" title="0">{
+func (m *MockDiveFishInterface) Create(arg0 *types.CreateFishPayload) (*models.DiveFish, error) <span class="cov0" title="0">{
         m.ctrl.T.Helper()
         ret := m.ctrl.Call(m, "Create", arg0)
         ret0, _ := ret[0].(*models.DiveFish)
@@ -123,6 +129,50 @@ func (m *MockDiveFishInterface) Create(arg0 types.CreateFishPayload) (*models.Di
 func (mr *MockDiveFishInterfaceMockRecorder) Create(arg0 interface{}) *gomock.Call <span class="cov0" title="0">{
         mr.mock.ctrl.T.Helper()
         return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockDiveFishInterface)(nil).Create), arg0)
+}</span>
+
+// Delete mocks base method.
+func (m *MockDiveFishInterface) Delete(id uint) error <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "Delete", id)
+        ret0, _ := ret[0].(error)
+        return ret0
+}</span>
+
+// Delete indicates an expected call of Delete.
+func (mr *MockDiveFishInterfaceMockRecorder) Delete(id interface{}) *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockDiveFishInterface)(nil).Delete), id)
+}</span>
+
+// ReadAll mocks base method.
+func (m *MockDiveFishInterface) ReadAll() ([]models.DiveFish, error) <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "ReadAll")
+        ret0, _ := ret[0].([]models.DiveFish)
+        ret1, _ := ret[1].(error)
+        return ret0, ret1
+}</span>
+
+// ReadAll indicates an expected call of ReadAll.
+func (mr *MockDiveFishInterfaceMockRecorder) ReadAll() *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadAll", reflect.TypeOf((*MockDiveFishInterface)(nil).ReadAll))
+}</span>
+
+// ReadOne mocks base method.
+func (m *MockDiveFishInterface) ReadOne(id uint) (*models.DiveFish, error) <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "ReadOne", id)
+        ret0, _ := ret[0].(*models.DiveFish)
+        ret1, _ := ret[1].(error)
+        return ret0, ret1
+}</span>
+
+// ReadOne indicates an expected call of ReadOne.
+func (mr *MockDiveFishInterfaceMockRecorder) ReadOne(id interface{}) *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadOne", reflect.TypeOf((*MockDiveFishInterface)(nil).ReadOne), id)
 }</span>
 </pre>
 		
@@ -178,6 +228,20 @@ func (mr *MockDiveInterfaceMockRecorder) Create(arg0 interface{}) *gomock.Call <
         return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockDiveInterface)(nil).Create), arg0)
 }</span>
 
+// Delete mocks base method.
+func (m *MockDiveInterface) Delete(id uint) error <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "Delete", id)
+        ret0, _ := ret[0].(error)
+        return ret0
+}</span>
+
+// Delete indicates an expected call of Delete.
+func (mr *MockDiveInterfaceMockRecorder) Delete(id interface{}) *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockDiveInterface)(nil).Delete), id)
+}</span>
+
 // ReadAll mocks base method.
 func (m *MockDiveInterface) ReadAll() ([]models.Dive, error) <span class="cov0" title="0">{
         m.ctrl.T.Helper()
@@ -191,6 +255,21 @@ func (m *MockDiveInterface) ReadAll() ([]models.Dive, error) <span class="cov0" 
 func (mr *MockDiveInterfaceMockRecorder) ReadAll() *gomock.Call <span class="cov0" title="0">{
         mr.mock.ctrl.T.Helper()
         return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadAll", reflect.TypeOf((*MockDiveInterface)(nil).ReadAll))
+}</span>
+
+// ReadOne mocks base method.
+func (m *MockDiveInterface) ReadOne(id uint) (*models.Dive, error) <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "ReadOne", id)
+        ret0, _ := ret[0].(*models.Dive)
+        ret1, _ := ret[1].(error)
+        return ret0, ret1
+}</span>
+
+// ReadOne indicates an expected call of ReadOne.
+func (mr *MockDiveInterfaceMockRecorder) ReadOne(id interface{}) *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadOne", reflect.TypeOf((*MockDiveInterface)(nil).ReadOne), id)
 }</span>
 </pre>
 		
@@ -244,6 +323,201 @@ func (mr *MockFishInterfaceMockRecorder) Create(arg0 interface{}) *gomock.Call <
         mr.mock.ctrl.T.Helper()
         return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockFishInterface)(nil).Create), arg0)
 }</span>
+</pre>
+		
+		<pre class="file" id="file3" style="display: none">// Code generated by MockGen. DO NOT EDIT.
+// Source: storage.go
+
+// Package mock_repositories is a generated GoMock package.
+package mock_repositories
+
+import (
+        types "diving-log-book-service/internal/types"
+        reflect "reflect"
+
+        gomock "github.com/golang/mock/gomock"
+)
+
+// MockStorageInterface is a mock of StorageInterface interface.
+type MockStorageInterface struct {
+        ctrl     *gomock.Controller
+        recorder *MockStorageInterfaceMockRecorder
+}
+
+// MockStorageInterfaceMockRecorder is the mock recorder for MockStorageInterface.
+type MockStorageInterfaceMockRecorder struct {
+        mock *MockStorageInterface
+}
+
+// NewMockStorageInterface creates a new mock instance.
+func NewMockStorageInterface(ctrl *gomock.Controller) *MockStorageInterface <span class="cov0" title="0">{
+        mock := &amp;MockStorageInterface{ctrl: ctrl}
+        mock.recorder = &amp;MockStorageInterfaceMockRecorder{mock}
+        return mock
+}</span>
+
+// EXPECT returns an object that allows the caller to indicate expected use.
+func (m *MockStorageInterface) EXPECT() *MockStorageInterfaceMockRecorder <span class="cov0" title="0">{
+        return m.recorder
+}</span>
+
+// Delete mocks base method.
+func (m *MockStorageInterface) Delete(arg0 *types.DeleteObject) error <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "Delete", arg0)
+        ret0, _ := ret[0].(error)
+        return ret0
+}</span>
+
+// Delete indicates an expected call of Delete.
+func (mr *MockStorageInterfaceMockRecorder) Delete(arg0 interface{}) *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockStorageInterface)(nil).Delete), arg0)
+}</span>
+
+// GetUrl mocks base method.
+func (m *MockStorageInterface) GetUrl(arg0 *types.GetUrl) (string, error) <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "GetUrl", arg0)
+        ret0, _ := ret[0].(string)
+        ret1, _ := ret[1].(error)
+        return ret0, ret1
+}</span>
+
+// GetUrl indicates an expected call of GetUrl.
+func (mr *MockStorageInterfaceMockRecorder) GetUrl(arg0 interface{}) *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUrl", reflect.TypeOf((*MockStorageInterface)(nil).GetUrl), arg0)
+}</span>
+
+// Upload mocks base method.
+func (m *MockStorageInterface) Upload(arg0 *types.UploadPayload) (*types.UploadedFile, error) <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "Upload", arg0)
+        ret0, _ := ret[0].(*types.UploadedFile)
+        ret1, _ := ret[1].(error)
+        return ret0, ret1
+}</span>
+
+// Upload indicates an expected call of Upload.
+func (mr *MockStorageInterfaceMockRecorder) Upload(arg0 interface{}) *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Upload", reflect.TypeOf((*MockStorageInterface)(nil).Upload), arg0)
+}</span>
+</pre>
+		
+		<pre class="file" id="file4" style="display: none">// Code generated by MockGen. DO NOT EDIT.
+// Source: user.go
+
+// Package mock_repositories is a generated GoMock package.
+package mock_repositories
+
+import (
+        models "diving-log-book-service/internal/models"
+        types "diving-log-book-service/internal/types"
+        reflect "reflect"
+
+        gomock "github.com/golang/mock/gomock"
+)
+
+// MockUserInterface is a mock of UserInterface interface.
+type MockUserInterface struct {
+        ctrl     *gomock.Controller
+        recorder *MockUserInterfaceMockRecorder
+}
+
+// MockUserInterfaceMockRecorder is the mock recorder for MockUserInterface.
+type MockUserInterfaceMockRecorder struct {
+        mock *MockUserInterface
+}
+
+// NewMockUserInterface creates a new mock instance.
+func NewMockUserInterface(ctrl *gomock.Controller) *MockUserInterface <span class="cov0" title="0">{
+        mock := &amp;MockUserInterface{ctrl: ctrl}
+        mock.recorder = &amp;MockUserInterfaceMockRecorder{mock}
+        return mock
+}</span>
+
+// EXPECT returns an object that allows the caller to indicate expected use.
+func (m *MockUserInterface) EXPECT() *MockUserInterfaceMockRecorder <span class="cov0" title="0">{
+        return m.recorder
+}</span>
+
+// Create mocks base method.
+func (m *MockUserInterface) Create(arg0 *types.CreateUserPayload) (*models.User, error) <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "Create", arg0)
+        ret0, _ := ret[0].(*models.User)
+        ret1, _ := ret[1].(error)
+        return ret0, ret1
+}</span>
+
+// Create indicates an expected call of Create.
+func (mr *MockUserInterfaceMockRecorder) Create(arg0 interface{}) *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockUserInterface)(nil).Create), arg0)
+}</span>
+
+// Delete mocks base method.
+func (m *MockUserInterface) Delete(id uint) error <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "Delete", id)
+        ret0, _ := ret[0].(error)
+        return ret0
+}</span>
+
+// Delete indicates an expected call of Delete.
+func (mr *MockUserInterfaceMockRecorder) Delete(id interface{}) *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockUserInterface)(nil).Delete), id)
+}</span>
+
+// ReadAll mocks base method.
+func (m *MockUserInterface) ReadAll() ([]models.User, error) <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "ReadAll")
+        ret0, _ := ret[0].([]models.User)
+        ret1, _ := ret[1].(error)
+        return ret0, ret1
+}</span>
+
+// ReadAll indicates an expected call of ReadAll.
+func (mr *MockUserInterfaceMockRecorder) ReadAll() *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadAll", reflect.TypeOf((*MockUserInterface)(nil).ReadAll))
+}</span>
+
+// ReadOne mocks base method.
+func (m *MockUserInterface) ReadOne(id uint) (*models.User, error) <span class="cov0" title="0">{
+        m.ctrl.T.Helper()
+        ret := m.ctrl.Call(m, "ReadOne", id)
+        ret0, _ := ret[0].(*models.User)
+        ret1, _ := ret[1].(error)
+        return ret0, ret1
+}</span>
+
+// ReadOne indicates an expected call of ReadOne.
+func (mr *MockUserInterfaceMockRecorder) ReadOne(id interface{}) *gomock.Call <span class="cov0" title="0">{
+        mr.mock.ctrl.T.Helper()
+        return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ReadOne", reflect.TypeOf((*MockUserInterface)(nil).ReadOne), id)
+}</span>
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package utils
+
+import (
+        "gorm.io/driver/postgres"
+        "gorm.io/gorm"
+)
+
+func ConnectDB() *gorm.DB <span class="cov8" title="1">{
+        db, err := gorm.Open(postgres.Open("postgres://admin:admin@0.0.0.0:5432/log-book"), &amp;gorm.Config{})
+        if err != nil </span><span class="cov0" title="0">{
+                panic(err)</span>
+        }
+
+        <span class="cov8" title="1">return db</span>
+}
 </pre>
 		
 		</div>

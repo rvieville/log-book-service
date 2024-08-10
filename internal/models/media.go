@@ -4,8 +4,9 @@ import "time"
 
 type Media struct {
 	ID        uint `gorm:"primaryKey" json:"id"`
-	DiveID    uint
-	Dive      *Dive `gorm:"foreignKey:DiveID"`
+	Bucket    string
+	Name      string
+	Url       string `gorm:"-"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
 }

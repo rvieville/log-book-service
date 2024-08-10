@@ -2,6 +2,7 @@ package repositories
 
 import (
 	"diving-log-book-service/internal/models"
+	"diving-log-book-service/internal/pkg/apihelper"
 
 	"gorm.io/gorm"
 )
@@ -29,7 +30,7 @@ func (f FishRepository) Create(name string) (*models.Fish, error) {
 
 	err := f.db.Create(fish)
 	if err.Error != nil {
-		return nil, err.Error
+		return nil, apihelper.GromError(err.Error)
 	}
 
 	return fish, nil
