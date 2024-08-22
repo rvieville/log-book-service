@@ -14,10 +14,13 @@ import (
 func DiveRouteInit(router *mux.Router) {
 	diveRepo := repositories.NewDiveRepository(db.DB)
 	diveFishRepo := repositories.NewDiveFishRepository(db.DB)
+	mediaRepo := repositories.NewMediaRepository(db.DB)
 	diveFishService := services.NewDiveFishService(diveFishRepo)
+	mediaService := services.NewMediaService(mediaRepo)
 	diveService := services.NewDiveService(&services.DiveServiceConfig{
 		DiveRepo:        diveRepo,
 		DiveFishService: diveFishService,
+		MediaService:    mediaService,
 	})
 	controller := controllers.NewDiveController(diveService)
 

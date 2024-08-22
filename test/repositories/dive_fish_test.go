@@ -1,25 +1,20 @@
 package repositories_test
 
 import (
-	"diving-log-book-service/internal/repositories"
 	"diving-log-book-service/internal/types"
 	"diving-log-book-service/test/utils"
 	"testing"
 )
 
-func getDiveFishRepo() repositories.DiveFishInterface {
-	return repositories.NewDiveFishRepository(utils.ConnectDB())
-}
-
 func TestCreateDiveFish(t *testing.T) {
-	diveToDelete = []uint{}
-	diveFishToDelete = []uint{}
+	utils.DiveToDelete = []uint{}
+	utils.DiveFishToDelete = []uint{}
 
-	repo := getDiveFishRepo()
-	diveRepo := getDiveRepo()
+	repo := utils.GetDiveFishRepo()
+	diveRepo := utils.GetDiveRepo()
 
 	dive := &types.CreateDivePayload{
-		Name:        "bonjour",
+		Name:        "test_dive_fish",
 		Depth:       14,
 		Country:     "France",
 		Island:      "Reunion",
@@ -43,12 +38,12 @@ func TestCreateDiveFish(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	diveToDelete = append(diveFishToDelete, createdDive.ID)
-	diveFishToDelete = append(diveFishToDelete, createdDiveFish.ID)
+	utils.DiveToDelete = append(utils.DiveFishToDelete, createdDive.ID)
+	utils.DiveFishToDelete = append(utils.DiveFishToDelete, createdDiveFish.ID)
 }
 
 func TestReadAllDiveFish(t *testing.T) {
-	repo := getDiveFishRepo()
+	repo := utils.GetDiveFishRepo()
 
 	_, err := repo.ReadAll()
 	if err != nil {
@@ -57,28 +52,28 @@ func TestReadAllDiveFish(t *testing.T) {
 }
 
 func TestReadOneDiveFish(t *testing.T) {
-	repo := getDiveFishRepo()
+	repo := utils.GetDiveFishRepo()
 
-	dive, err := repo.ReadOne(diveFishToDelete[0])
+	dive, err := repo.ReadOne(utils.DiveFishToDelete[0])
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	if dive.ID != diveFishToDelete[0] {
-		t.Fatal("Should be diveId ", diveFishToDelete[0], " but got ", dive.ID)
+	if dive.ID != utils.DiveFishToDelete[0] {
+		t.Fatal("Should be diveId ", utils.DiveFishToDelete[0], " but got ", dive.ID)
 	}
 }
 
 func TestDeleteDiveFish(t *testing.T) {
-	repo := getDiveFishRepo()
-	diveRepo := getDiveRepo()
+	repo := utils.GetDiveFishRepo()
+	diveRepo := utils.GetDiveRepo()
 
-	err := repo.Delete(diveFishToDelete[0])
+	err := repo.Delete(utils.DiveFishToDelete[0])
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	err = diveRepo.Delete(diveToDelete[0])
+	err = diveRepo.Delete(utils.DiveToDelete[0])
 	if err != nil {
 		t.Fatal(err)
 	}

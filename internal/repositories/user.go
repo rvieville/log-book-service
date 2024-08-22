@@ -28,7 +28,7 @@ func NewUserRepository(db *gorm.DB) UserInterface {
 }
 
 func (u UserRepository) Create(payload *types.CreateUserPayload) (*models.User, error) {
-	hashedPassword, passErr := crypto.HashPassword(payload.Password)
+	hashedPassword, passErr := crypto.HashString(payload.Password)
 	if passErr != nil {
 		return nil, passErr
 	}

@@ -8,6 +8,7 @@ import (
 	types "diving-log-book-service/internal/types"
 	reflect "reflect"
 
+	s3 "github.com/aws/aws-sdk-go/service/s3"
 	gomock "github.com/golang/mock/gomock"
 )
 
@@ -32,6 +33,35 @@ func NewMockStorageInterface(ctrl *gomock.Controller) *MockStorageInterface {
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockStorageInterface) EXPECT() *MockStorageInterfaceMockRecorder {
 	return m.recorder
+}
+
+// AbortMultipart mocks base method.
+func (m *MockStorageInterface) AbortMultipart(payload *types.AbortMultipartPayload) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "AbortMultipart", payload)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// AbortMultipart indicates an expected call of AbortMultipart.
+func (mr *MockStorageInterfaceMockRecorder) AbortMultipart(payload interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AbortMultipart", reflect.TypeOf((*MockStorageInterface)(nil).AbortMultipart), payload)
+}
+
+// CompleteMultipart mocks base method.
+func (m *MockStorageInterface) CompleteMultipart(payload *types.CompleteMultipartPayload) (*s3.CompleteMultipartUploadOutput, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CompleteMultipart", payload)
+	ret0, _ := ret[0].(*s3.CompleteMultipartUploadOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CompleteMultipart indicates an expected call of CompleteMultipart.
+func (mr *MockStorageInterfaceMockRecorder) CompleteMultipart(payload interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CompleteMultipart", reflect.TypeOf((*MockStorageInterface)(nil).CompleteMultipart), payload)
 }
 
 // Delete mocks base method.
@@ -63,6 +93,21 @@ func (mr *MockStorageInterfaceMockRecorder) GetUrl(arg0 interface{}) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUrl", reflect.TypeOf((*MockStorageInterface)(nil).GetUrl), arg0)
 }
 
+// InitMultipart mocks base method.
+func (m *MockStorageInterface) InitMultipart(multipart *types.InitMultipartPayload) (*s3.CreateMultipartUploadOutput, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "InitMultipart", multipart)
+	ret0, _ := ret[0].(*s3.CreateMultipartUploadOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// InitMultipart indicates an expected call of InitMultipart.
+func (mr *MockStorageInterfaceMockRecorder) InitMultipart(multipart interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InitMultipart", reflect.TypeOf((*MockStorageInterface)(nil).InitMultipart), multipart)
+}
+
 // Upload mocks base method.
 func (m *MockStorageInterface) Upload(arg0 *types.UploadPayload) (*types.UploadedFile, error) {
 	m.ctrl.T.Helper()
@@ -76,4 +121,19 @@ func (m *MockStorageInterface) Upload(arg0 *types.UploadPayload) (*types.Uploade
 func (mr *MockStorageInterfaceMockRecorder) Upload(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Upload", reflect.TypeOf((*MockStorageInterface)(nil).Upload), arg0)
+}
+
+// UploadPart mocks base method.
+func (m *MockStorageInterface) UploadPart(input *types.UploadPartPayload) (*s3.UploadPartOutput, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UploadPart", input)
+	ret0, _ := ret[0].(*s3.UploadPartOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UploadPart indicates an expected call of UploadPart.
+func (mr *MockStorageInterfaceMockRecorder) UploadPart(input interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UploadPart", reflect.TypeOf((*MockStorageInterface)(nil).UploadPart), input)
 }

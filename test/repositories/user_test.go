@@ -18,8 +18,8 @@ func TestCreateUser(t *testing.T) {
 	repo := getUserRepo()
 
 	user := &types.CreateUserPayload{
-		DisplayName: "raf",
-		Email:       "test@gmail.com",
+		DisplayName: "rafael vieville",
+		Email:       "rafael.vieville@gmail.com",
 		Password:    "password",
 	}
 

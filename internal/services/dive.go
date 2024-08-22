@@ -9,17 +9,20 @@ import (
 type DiveService struct {
 	diveRepo        repositories.DiveInterface
 	diveFishService *DiveFishService
+	mediaService    *MediaService
 }
 
 type DiveServiceConfig struct {
 	DiveRepo        repositories.DiveInterface
 	DiveFishService *DiveFishService
+	MediaService    *MediaService
 }
 
 func NewDiveService(config *DiveServiceConfig) *DiveService {
 	return &DiveService{
 		diveRepo:        config.DiveRepo,
 		diveFishService: config.DiveFishService,
+		mediaService:    config.MediaService,
 	}
 }
 
@@ -35,7 +38,16 @@ func (fm DiveService) Create(payload *types.CreateDivePayload) (*models.Dive, er
 			FishID: fish,
 		})
 	}
-	// TODO: create media
+
+	if len(payload.Medias) > 0 {
+		for _, media := range payload.Medias {
+			fm.mediaService.Create(&types.CreateMediaPayload{
+				Key:    media.Key,
+				Bucket: media.Bucket,
+				DiveID: dive.ID,
+			})
+		}
+	}
 
 	return dive, nil
 }

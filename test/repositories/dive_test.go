@@ -1,23 +1,14 @@
 package repositories_test
 
 import (
-	"diving-log-book-service/internal/repositories"
 	"diving-log-book-service/internal/types"
 	"diving-log-book-service/test/utils"
 	"testing"
 )
 
-var diveToDelete []uint
-var diveFishToDelete []uint
-
-func getDiveRepo() repositories.DiveInterface {
-	return repositories.NewDiveRepository(utils.ConnectDB())
-}
-
 func TestCreateDive(t *testing.T) {
-	diveToDelete = []uint{}
-	diveFishToDelete = []uint{}
-	repo := getDiveRepo()
+	utils.DiveToDelete = []uint{}
+	repo := utils.GetDiveRepo()
 
 	dive := &types.CreateDivePayload{
 		Name:        "bonjour",
@@ -34,11 +25,11 @@ func TestCreateDive(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	diveToDelete = append(diveToDelete, createdDive.ID)
+	utils.DiveToDelete = append(utils.DiveToDelete, createdDive.ID)
 }
 
 func TestReadAllDive(t *testing.T) {
-	repo := getDiveRepo()
+	repo := utils.GetDiveRepo()
 
 	_, err := repo.ReadAll()
 	if err != nil {
@@ -47,22 +38,22 @@ func TestReadAllDive(t *testing.T) {
 }
 
 func TestReadOneDive(t *testing.T) {
-	repo := getDiveRepo()
+	repo := utils.GetDiveRepo()
 
-	dive, err := repo.ReadOne(diveToDelete[0])
+	dive, err := repo.ReadOne(utils.DiveToDelete[0])
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	if dive.ID != diveToDelete[0] {
-		t.Fatal("Should be diveId ", diveToDelete[0], " but got ", dive.ID)
+	if dive.ID != utils.DiveToDelete[0] {
+		t.Fatal("Should be diveId ", utils.DiveToDelete[0], " but got ", dive.ID)
 	}
 }
 
 func TestDeleteDive(t *testing.T) {
-	repo := getDiveRepo()
+	repo := utils.GetDiveRepo()
 
-	err := repo.Delete(diveToDelete[0])
+	err := repo.Delete(utils.DiveToDelete[0])
 	if err != nil {
 		t.Fatal(err)
 	}

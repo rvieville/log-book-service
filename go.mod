@@ -4,7 +4,6 @@ go 1.22.5
 
 require (
 	github.com/aws/aws-sdk-go v1.55.5
-	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/go-playground/validator/v10 v10.22.0
 	github.com/golang/mock v1.6.0
 	github.com/google/uuid v1.6.0
@@ -12,6 +11,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/rs/zerolog v1.33.0
 	golang.org/x/crypto v0.26.0
+	golang.org/x/sync v0.8.0
 	gorm.io/driver/postgres v1.5.9
 	gorm.io/gorm v1.25.11
 )
@@ -32,8 +32,6 @@ require (
 	github.com/mattn/go-isatty v0.0.19 // indirect
 	github.com/stretchr/testify v1.9.0 // indirect
 	golang.org/x/net v0.26.0 // indirect
-	golang.org/x/sync v0.8.0 // indirect
 	golang.org/x/sys v0.23.0 // indirect
 	golang.org/x/text v0.17.0 // indirect
-	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 )

@@ -50,7 +50,7 @@ func (d DiveRepository) Create(payload *types.CreateDivePayload) (*models.Dive, 
 func (d DiveRepository) ReadAll() ([]models.Dive, error) {
 	var dives []models.Dive
 
-	err := d.db.Preload("Fishes").Find(&dives)
+	err := d.db.Preload("Fishes").Preload("Medias").Find(&dives)
 	if err.Error != nil {
 		return nil, apihelper.GromError(err.Error)
 	}
