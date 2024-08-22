@@ -27,6 +27,7 @@ func init() {
 func main() {
 	router := mux.NewRouter()
 	router.Use(middlewares.CHeadersnMiddleware)
+	router.Use(middlewares.Cors)
 	routes.InitRoutes(router)
 
 	http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("APP_PORT")), router)

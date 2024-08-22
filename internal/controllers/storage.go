@@ -11,6 +11,7 @@ import (
 	"net/url"
 	"os"
 	"strconv"
+	"strings"
 
 	"github.com/go-playground/validator/v10"
 	"golang.org/x/sync/errgroup"
@@ -70,10 +71,12 @@ func (s StorageController) Upload(w http.ResponseWriter, r *http.Request) {
 	for _, file := range files {
 		g.Go(func() error {
 			body, _ := file.Open()
+			fileName := strings.ReplaceAll(file.Filename, "+", " ")
+			fileName = url.PathEscape(fileName)
 			payload := &types.UploadPayload{
 				Bucket: os.Getenv("STORAGE_BUCKET"),
 				Body:   body,
-				Key:    fmt.Sprintf("%d/%s", diveID, url.QueryEscape(file.Filename)),
+				Key:    fmt.Sprintf("%d/%s", diveID, fileName),
 			}
 
 			res, err := s.storageService.Upaload(payload)

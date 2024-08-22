@@ -1,6 +1,27 @@
 version: '3.9'
 
 services:
+  log-book-serivce:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: log-book-serivce:latest
+    container_name: log-book-serivce-container
+    depends_on:
+      - postgres
+    environment:
+      - APP_PORT=3000
+      - DIVING_DATABASE=postgres://admin:admin@postgres:5432/log-book
+      - STORAGE_URL=minio:9000
+      - STORAGE_BUCKET=dive
+      - STORAGE_REGION=ap-southeast-1
+      - STORAGE_ACCESS_KEY=2Jv9D4VaR9uas7uF4rx4
+      - STORAGE_SECRET_KEY=ppb0z7FgoUAhWITcVvFqUQ4qkuzRIfyi6gnblPou
+    ports:
+      - "8080:3000"  # Map port 8080 of the container to port 8080 on your host
+    networks:
+      - my-network
+    restart: always
   postgres:
     image: postgres:14-alpine
     ports:
@@ -9,6 +30,8 @@ services:
       - POSTGRES_PASSWORD=admin
       - POSTGRES_USER=admin
       - POSTGRES_DB=log-book
+    networks:
+      - my-network
   minio:
     image: minio/minio
     environment:
@@ -19,8 +42,14 @@ services:
       - '8900:8900'
     volumes:
       - 'minio:/tmp/minio'
+    networks:
+      - my-network
     command: 'minio server /tmp/minio --console-address ":8900"'
 
 volumes:
   minio:
     driver: local
+
+networks:
+  my-network:
+    driver: bridge
