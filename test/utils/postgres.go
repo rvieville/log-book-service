@@ -36,3 +36,7 @@ func GetDiveRepo() repositories.DiveInterface {
 func GetDiveFishRepo() repositories.DiveFishInterface {
 	return repositories.NewDiveFishRepository(ConnectDB())
 }
+
+func GetCountryRepo() repositories.CountryInterface {
+	return repositories.NewCountryRepository(ConnectDB())
+}

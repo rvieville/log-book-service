@@ -14,8 +14,8 @@ type Dive struct {
 	Medias      []Media   `json:"medias"`
 	Duration    float32   `json:"duration"`
 	UserID      *uint     `json:"userId"`
-	CreatedAt   time.Time `json:"created_at"`
-	UpdatedAt   time.Time `json:"updated_at"`
+	CreatedAt   time.Time `json:"createdAt"`
+	UpdatedAt   time.Time `json:"updatedAt"`
 }
 
 func (Dive) TableName() string {

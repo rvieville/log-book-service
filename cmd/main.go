@@ -24,11 +24,17 @@ func init() {
 	apihelper.InitValidator()
 }
 
+func Handle404(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	apihelper.Error(w, apihelper.NotFound("Route not found"))
+}
+
 func main() {
 	router := mux.NewRouter()
 	router.Use(middlewares.CHeadersnMiddleware)
 	router.Use(middlewares.Cors)
 	routes.InitRoutes(router)
+	router.NotFoundHandler = http.HandlerFunc(Handle404)
 
 	http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("APP_PORT")), router)
 }

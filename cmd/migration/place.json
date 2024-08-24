@@ -1,0 +1,627 @@
+[
+	{
+		"country": "Australia",
+		"islands": [
+			"Great Barrier Reef",
+			"Coral Sea",
+			"Lord Howe Island",
+			"Ningaloo Reef",
+			"Tasmania",
+			"Whitsunday Islands",
+			"Christmas Island",
+			"Cocos (Keeling) Islands",
+			"Jervis Bay",
+			"Rottnest Island"
+		]
+	},
+	{
+		"country": "Maldives",
+		"islands": [
+			"Malé Atoll",
+			"Ari Atoll",
+			"Baa Atoll",
+			"Laccadive Atoll",
+			"Raa Atoll",
+			"Thaa Atoll",
+			"Gaafu Alif Atoll",
+			"Gaafu Dhaalu Atoll",
+			"Meemu Atoll",
+			"Hinnavaru Atoll"
+		]
+	},
+	{
+		"country": "Indonesia",
+		"islands": [
+			"Bali",
+			"Komodo Island",
+			"Raja Ampat",
+			"Gili Islands",
+			"Bunaken",
+			"Alor Archipelago",
+			"Wakatobi",
+			"Sumbawa",
+			"Selayar Islands",
+			"Kalimantan",
+			"Sulawesi",
+			"Sumba",
+			"Flores"
+		]
+	},
+	{
+		"country": "Philippines",
+		"islands": [
+			"Palawan",
+			"Moalboal",
+			"Cebu",
+			"Anilao",
+			"Boracay",
+			"Apo Island",
+			"Tubbataha Reefs",
+			"Batangas",
+			"Dumaguete",
+			"Coron",
+			"Malapascua",
+			"Camiguin",
+			"Siargao",
+			"Bohol"
+		]
+	},
+	{
+		"country": "Thailand",
+		"islands": [
+			"Similan Islands",
+			"Koh Tao",
+			"Koh Lanta",
+			"Koh Phi Phi",
+			"Koh Chang",
+			"Koh Samui",
+			"Koh Bon",
+			"Koh Samed",
+			"Koh Mak",
+			"Surin Islands",
+			"Koh Lipe",
+			"Koh Racha",
+			"Koh Ha",
+			"Chumphon"
+		]
+	},
+	{
+		"country": "Hawaii",
+		"islands": [
+			"Oahu",
+			"Big Island",
+			"Maui",
+			"Kauai",
+			"Lanai",
+			"Molokai",
+			"Niihau",
+			"Hanauma Bay",
+			"Waimea Bay",
+			"Molokini Crater",
+			"Kona Coast"
+		]
+	},
+	{
+		"country": "Caribbean",
+		"islands": [
+			"Bonaire",
+			"Cozumel",
+			"Grand Cayman",
+			"Turks and Caicos",
+			"Barbados",
+			"Saint Lucia",
+			"Saint Vincent and the Grenadines",
+			"Antigua and Barbuda",
+			"Grenada",
+			"Aruba",
+			"Saint Kitts and Nevis",
+			"Dominica",
+			"Saint Barthelemy",
+			"Saba",
+			"Curacao",
+			"Bonaire",
+			"Anguilla"
+		]
+	},
+	{
+		"country": "Cuba",
+		"islands": [
+			"Guama",
+			"Varadero",
+			"Jardines de la Reina",
+			"Cayo Coco",
+			"Cayo Guillermo",
+			"Cayo Largo",
+			"Maria la Gorda",
+			"Bahía de Cochinos",
+			"Cayo Santa Maria",
+			"Cayo Levisa",
+			"Jardines de la Reina"
+		]
+	},
+	{
+		"country": "South Africa",
+		"islands": [
+			"Protea Banks",
+			"Aliwal Shoal",
+			"Knysna",
+			"Sodwana Bay",
+			"Cape Town",
+			"False Bay",
+			"Gansbaai",
+			"Dyer Island",
+			"Port Elizabeth",
+			"Paternoster",
+			"Mozambique Channel",
+			"KwaZulu-Natal"
+		]
+	},
+	{
+		"country": "Egypt",
+		"islands": [
+			"Sharm El Sheikh",
+			"Dahab",
+			"Hurghada",
+			"Marsa Alam",
+			"El Gouna",
+			"Taba",
+			"Soma Bay",
+			"Ras Mohammed National Park",
+			"Safaga",
+			"The Brothers Islands",
+			"Siwa Oasis",
+			"Gabal Elba"
+		]
+	},
+	{
+		"country": "Belize",
+		"islands": [
+			"Ambergris Caye",
+			"Hol Chan Marine Reserve",
+			"Turneffe Atoll",
+			"Glover's Reef Atoll",
+			"Blue Hole",
+			"South Water Caye",
+			"Lighthouse Reef Atoll",
+			"Caye Caulker",
+			"Half Moon Caye",
+			"Long Caye",
+			"St. George's Caye",
+			"Glover's Reef"
+		]
+	},
+	{
+		"country": "Fiji",
+		"islands": [
+			"Viti Levu",
+			"Taveuni",
+			"Kadavu",
+			"Beqa",
+			"Yasawa Islands",
+			"Mamanuca Islands",
+			"Namena Marine Reserve",
+			"Rainbow Reef",
+			"Ovalau",
+			"Koro Island",
+			"Vatulele",
+			"Laucala Island",
+			"Vunisea"
+		]
+	},
+	{
+		"country": "French Polynesia",
+		"islands": [
+			"Bora Bora",
+			"Rangiroa",
+			"Moorea",
+			"Fakarava",
+			"Tikehau",
+			"Huahine",
+			"Rurutu",
+			"Tahiti",
+			"Manihi",
+			"Ahe",
+			"Maupiti",
+			"Rangiroa",
+			"Moorea"
+		]
+	},
+	{
+		"country": "Malta",
+		"islands": [
+			"Gozo",
+			"Comino",
+			"Malta (Main Island)",
+			"Filfla",
+			"Cominotto",
+			"St. Paul’s Islands",
+			"Cirkewwa",
+			"Blue Hole",
+			"Xlendi",
+			"Mgarr",
+			"Dwejra",
+			"Valletta",
+			"San Lawrenz"
+		]
+	},
+	{
+		"country": "United States",
+		"islands": [
+			"Key Largo",
+			"Key West",
+			"Hawaii",
+			"San Juan Islands",
+			"Florida Keys",
+			"Channel Islands",
+			"Monterey Bay",
+			"Hanauma Bay",
+			"Palau",
+			"Galápagos Islands",
+			"Maui",
+			"Catalina Island",
+			"American Samoa",
+			"Fiji",
+			"Gulf of Mexico"
+		]
+	},
+	{
+		"country": "Bahamas",
+		"islands": [
+			"Grand Bahama",
+			"Exuma",
+			"Andros",
+			"Eleuthera",
+			"Bimini",
+			"Long Island",
+			"San Salvador",
+			"Cat Island",
+			"Abaco Islands",
+			"Acklins",
+			"Ragged Island",
+			"Mayaguana",
+			"Inagua",
+			"The Berry Islands"
+		]
+	},
+	{
+		"country": "Japan",
+		"islands": [
+			"Okinawa",
+			"Yonaguni",
+			"Ishigaki",
+			"Kumejima",
+			"Miyakojima",
+			"Amami Oshima",
+			"Kerama Islands",
+			"Ogasawara Islands",
+			"Zamami",
+			"Kuroshima",
+			"Taketomi",
+			"Iriomote",
+			"Ishigaki",
+			"Miyakojima"
+		]
+	},
+	{
+		"country": "Mexico",
+		"islands": [
+			"Cozumel",
+			"Cenote Dos Ojos",
+			"Isla Mujeres",
+			"Cancun",
+			"Cabo Pulmo",
+			"Isla Contoy",
+			"Cabo San Lucas",
+			"La Paz",
+			"Holbox",
+			"Riviera Maya",
+			"Puerto Morelos",
+			"La Paz",
+			"Cabo San Lucas"
+		]
+	},
+	{
+		"country": "Brazil",
+		"islands": [
+			"Fernando de Noronha",
+			"Abrolhos",
+			"Arraial do Cabo",
+			"Ilha Grande",
+			"Paraty",
+			"Recife",
+			"Porto de Galinhas",
+			"Bonito",
+			"São Sebastião",
+			"Ilhabela",
+			"Angra dos Reis",
+			"Fernando de Noronha",
+			"Ilha do Cardoso"
+		]
+	},
+	{
+		"country": "Italy",
+		"islands": [
+			"Sardinia",
+			"Sicily",
+			"Capri",
+			"Elba Island",
+			"Portofino",
+			"Amalfi Coast",
+			"Cinque Terre",
+			"Ponza",
+			"Ustica",
+			"Tremiti Islands",
+			"Ischia",
+			"Procida",
+			"Capri",
+			"Sorrento"
+		]
+	},
+	{
+		"country": "Greece",
+		"islands": [
+			"Santorini",
+			"Kefalonia",
+			"Rhodes",
+			"Crete",
+			"Mykonos",
+			"Zakynthos",
+			"Hydra",
+			"Corfu",
+			"Karim",
+			"Leros",
+			"Kos",
+			"Samos",
+			"Kalymnos",
+			"Lesbos"
+		]
+	},
+	{
+		"country": "Turkey",
+		"islands": [
+			"Kas",
+			"Kekova",
+			"Dalyan",
+			"Bodrum",
+			"Fethiye",
+			"Antalya",
+			"Marmaris",
+			"Gocek",
+			"Datça",
+			"Gokova Bay",
+			"Bozburun",
+			"Kaş",
+			"Tarsus",
+			"Dalyan"
+		]
+	},
+	{
+		"country": "South Korea",
+		"islands": [
+			"Jeju Island",
+			"Udo Island",
+			"Seongsan Ilchulbong",
+			"Hyeopjae Beach",
+			"Saryeoni Forest",
+			"Biyangdo",
+			"Halla Mountain",
+			"Woljeongri Beach",
+			"Chuja Islands",
+			"Marado",
+			"Jeju-do",
+			"Seogwipo",
+			"Jungmun",
+			"Hyeopjae"
+		]
+	},
+	{
+		"country": "New Zealand",
+		"islands": [
+			"Poor Knights Islands",
+			"Milford Sound",
+			"Fiordland",
+			"Great Barrier Island",
+			"Auckland",
+			"Wellington",
+			"Kermadec Islands",
+			"Kaikoura",
+			"Tonga Island",
+			"White Island",
+			"Rangitoto Island",
+			"Marlborough Sounds",
+			"Catlins"
+		]
+	},
+	{
+		"country": "Spain",
+		"islands": [
+			"Canary Islands",
+			"Balearic Islands",
+			"Ibiza",
+			"Mallorca",
+			"Menorca",
+			"Tenerife",
+			"Gran Canaria",
+			"La Palma",
+			"Lanzarote",
+			"Formentera",
+			"Cabo de Gata",
+			"Almería",
+			"Costa Brava",
+			"Catalonia"
+		]
+	},
+	{
+		"country": "South Sudan",
+		"islands": ["Juba", "Nimule"]
+	},
+	{
+		"country": "Norway",
+		"islands": [
+			"Svalbard",
+			"Lofoten Islands",
+			"Oslofjord",
+			"Helgeland",
+			"Tromsø",
+			"Stadtlandet",
+			"Vesterålen",
+			"Senja",
+			"Sogn og Fjordane",
+			"Jæren",
+			"Kongsberg"
+		]
+	},
+	{
+		"country": "Iceland",
+		"islands": [
+			"Silfra",
+			"Reykjavik",
+			"Vestmannaeyjar",
+			"Seydisfjordur",
+			"Thingvellir",
+			"Silfra Fissure",
+			"Lake Thingvallavatn",
+			"Keflavik",
+			"Djúpalónssandur",
+			"Skaftafell"
+		]
+	},
+	{
+		"country": "Portugal",
+		"islands": [
+			"Madeira",
+			"Azores",
+			"Sesimbra",
+			"Arrábida",
+			"Cascais",
+			"Porto Santo",
+			"Berlengas",
+			"Costa Vicentina",
+			"Setúbal",
+			"Sintra"
+		]
+	},
+	{
+		"country": "Cyprus",
+		"islands": [
+			"Ayia Napa",
+			"Protaras",
+			"Larnaca",
+			"Paphos",
+			"Limassol",
+			"Cape Greco",
+			"Famagusta",
+			"Nicosia",
+			"Kapparis",
+			"Latsi"
+		]
+	},
+	{
+		"country": "Malaysia",
+		"islands": [
+			"Sipadan",
+			"Kapalai",
+			"Mabul",
+			"Langkawi",
+			"Tioman Island",
+			"Redang Island",
+			"Perhentian Islands",
+			"Kudat",
+			"Layang-Layang",
+			"Mabul Island"
+		]
+	},
+	{
+		"country": "Taiwan",
+		"islands": [
+			"Green Island",
+			"Orchid Island",
+			"Kenting National Park",
+			"Penghu Islands",
+			"Hualien",
+			"Taitung",
+			"Nanfangao",
+			"Taipei",
+			"Keelung",
+			"Hengchun Peninsula"
+		]
+	},
+	{
+		"country": "Singapore",
+		"islands": [
+			"Sister Islands",
+			"Pulau Hantu",
+			"Pulau Aur",
+			"Kusu Island",
+			"Sentosa",
+			"Pulau Bukom",
+			"Tanjong Rhu",
+			"Sungei Buloh",
+			"Lazarus Island",
+			"Pulau Sebarok"
+		]
+	},
+	{
+		"country": "Hong Kong",
+		"islands": [
+			"Clear Water Bay",
+			"Sai Kung",
+			"Lantau Island",
+			"Cheung Chau",
+			"South Lantau",
+			"Shenzhen",
+			"Ap Lei Chau",
+			"Tai O",
+			"Kowloon Bay",
+			"Victoria Harbour"
+		]
+	},
+	{
+		"country": "India",
+		"islands": [
+			"Andaman Islands",
+			"Lakshadweep",
+			"Goa",
+			"Kumarakom",
+			"Netrani Island",
+			"Malapascua Island",
+			"Kerala",
+			"Pondicherry",
+			"Daman and Diu",
+			"Rameswaram"
+		]
+	},
+	{
+		"country": "Sri Lanka",
+		"islands": [
+			"Trincomalee",
+			"Hikkaduwa",
+			"Mirissa",
+			"Unawatuna",
+			"Kalpitiya",
+			"Weligama",
+			"Bentota",
+			"Galle",
+			"Pigeon Island",
+			"Negombo"
+		]
+	},
+	{
+		"country": "France",
+		"islands": [
+			"Corsica",
+			"Réunion Island",
+			"Guadeloupe",
+			"Martinique",
+			"Brittany",
+			"Mediterranean Coast",
+			"French Polynesia",
+			"Saint Pierre and Miquelon",
+			"Nouvelle-Calédonie",
+			"Tromelin Island",
+			"Mayotte",
+			"Île d'Yeu",
+			"Îles Glénan"
+		]
+	}
+]
