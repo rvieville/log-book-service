@@ -7,13 +7,13 @@ import (
 	"testing"
 )
 
-func TestReadAllCountry(t *testing.T) {
-	repo := utils.GetCountryRepo()
+func TestReadAllIsland(t *testing.T) {
+	repo := utils.GetIslandRepo()
 	filters := []gormHelper.Filter{}
 	filters = append(filters, gormHelper.Filter{
-		Expression: "id IN ?",
+		Expression: "slug like ?",
 		Data: []any{
-			[]any{1, 2, 3, 4},
+			fmt.Sprintf("%%%s%%", "cor"),
 		},
 	})
 

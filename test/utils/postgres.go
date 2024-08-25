@@ -40,3 +40,7 @@ func GetDiveFishRepo() repositories.DiveFishInterface {
 func GetCountryRepo() repositories.CountryInterface {
 	return repositories.NewCountryRepository(ConnectDB())
 }
+
+func GetIslandRepo() repositories.IslandInterface {
+	return repositories.NewIslandRepository(ConnectDB())
+}

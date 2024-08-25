@@ -3,6 +3,7 @@ package repositories
 import (
 	"diving-log-book-service/internal/models"
 	gormHelper "diving-log-book-service/internal/pkg/gorm"
+	"fmt"
 
 	"gorm.io/gorm"
 )
@@ -25,6 +26,7 @@ func NewCountryRepository(db *gorm.DB) CountryInterface {
 
 func (c CountryRepository) ReadAll(filters []gormHelper.Filter) ([]models.Country, error) {
 	db := c.db
+	fmt.Println(filters)
 	if filters != nil {
 		scopes := gormHelper.CreateFilter(filters)
 		db = db.Scopes(scopes)

@@ -2,7 +2,6 @@ package routes
 
 import (
 	"diving-log-book-service/internal/controllers"
-	"diving-log-book-service/internal/middlewares"
 	"diving-log-book-service/internal/repositories"
 	"diving-log-book-service/internal/services"
 	"net/http"
@@ -30,7 +29,6 @@ func StorageRouteInit(router *mux.Router) {
 	controller := controllers.NewStorageController(storageService)
 
 	group := router.PathPrefix("/storage").Subrouter()
-	group.Use(middlewares.LoggingMiddleware)
 
 	group.HandleFunc("", controller.Get).Methods(http.MethodGet)
 	group.HandleFunc("/upload", controller.Upload).Methods(http.MethodPost)

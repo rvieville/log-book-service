@@ -3,7 +3,6 @@ package routes
 import (
 	"diving-log-book-service/internal/controllers"
 	"diving-log-book-service/internal/db"
-	"diving-log-book-service/internal/middlewares"
 	"diving-log-book-service/internal/repositories"
 	"diving-log-book-service/internal/services"
 	"net/http"
@@ -25,7 +24,6 @@ func DiveRouteInit(router *mux.Router) {
 	controller := controllers.NewDiveController(diveService)
 
 	group := router.PathPrefix("/dive").Subrouter()
-	group.Use(middlewares.LoggingMiddleware)
 
 	group.HandleFunc("/create", controller.Create).Methods(http.MethodPost)
 	group.HandleFunc("/list", controller.ReadAll).Methods(http.MethodGet)
